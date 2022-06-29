@@ -1,0 +1,214 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: :9090
+proxies:
+  - {name: 「Lv1」⑪ V2ray 日本, server: v1hk011.recare.xyz, port: 18111, type: vmess, uuid: 52089e88-38b7-38c3-a414-b86455805cb6, alterId: 2, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 「Lv1」⑩ V2ray 香港, server: v1hk010.recare.xyz, port: 18110, type: vmess, uuid: c9a7fcb2-9bf9-308f-b84c-557320c7df73, alterId: 2, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 香港-PRO-IPLC-HK1-7-流量倍率:1.0, server: pro-iplc-hk1-7.nigirocloud.com, port: 465, type: trojan, password: F2PBuUr6fjCfc2Y8D5, sni: pro-iplc-hk1-7.nigirocloud.com, skip-cert-verify: true, udp: true}
+  - {name: 「Lv1」③ v2ray 北京BGP-中转-香港, server: v1hk003.recare.xyz, port: 18103, type: vmess, uuid: b7fde1f6-bbf7-3643-9e93-f6af26a71ec9, alterId: 2, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: "[vip1]︱V2ray︱㉓日本 1000M｜×1x｜限速100M", server: 135.wgong1.top, port: 52335, type: vmess, uuid: 720ce6e0-1947-3af1-9462-bed9c482e087, alterId: 2, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: "[vip1]︱V2ray︱①台湾 600M｜×1x｜限速100M", server: 29.wgong1.top, port: 52229, type: vmess, uuid: 720ce6e0-1947-3af1-9462-bed9c482e087, alterId: 2, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 香港-PRO-IPLC-HK2-8-流量倍率:1.0, server: pro-iplc-hk2-8.nigirocloud.com, port: 465, type: trojan, password: F2PBuUr6fjCfc2Y8D5, sni: pro-iplc-hk2-8.nigirocloud.com, skip-cert-verify: true, udp: true}
+  - {name: "︱V2ray︱⑰[vip2]中转｜广移｜新加坡｜×3x---200M", server: 102.wgong2.xyz, port: 11221, type: vmess, uuid: 720ce6e0-1947-3af1-9462-bed9c482e087, alterId: 2, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 「Lv1」⑦ v2ray 新加坡, server: v1hk007.recare.xyz, port: 18107, type: vmess, uuid: c9a7fcb2-9bf9-308f-b84c-557320c7df73, alterId: 2, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: "[vip1]︱V2ray︱⑫新加坡 1000M｜×1x｜限速100M", server: 116.wgong1.top, port: 52216, type: vmess, uuid: 720ce6e0-1947-3af1-9462-bed9c482e087, alterId: 2, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 香港-PRO-IPLC-HK2-6-流量倍率:1.0, server: pro-iplc-hk2-6.nigirocloud.com, port: 465, type: trojan, password: F2PBuUr6fjCfc2Y8D5, sni: pro-iplc-hk2-6.nigirocloud.com, skip-cert-verify: true, udp: true}
+  - {name: "[vip1]︱V2ray︱③日本 1000M｜×1x｜限速100M", server: 31.wgong1.top, port: 52231, type: vmess, uuid: 720ce6e0-1947-3af1-9462-bed9c482e087, alterId: 2, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+  - {name: 香港-PRO-HK1-8-流量倍率:0.5, server: pro-hk1-8.nigirocloud.com, port: 443, type: trojan, password: F2PBuUr6fjCfc2Y8D5, sni: pro-hk1-8.nigirocloud.com, skip-cert-verify: true, udp: true}
+  - {name: 「Lv1」⑬ V2ray 新加坡, server: v1hk013.recare.xyz, port: 18113, type: vmess, uuid: c9a7fcb2-9bf9-308f-b84c-557320c7df73, alterId: 2, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+proxy-groups:
+  - name: 🔰 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🎯 全球直连
+      - 「Lv1」⑪ V2ray 日本
+      - 「Lv1」⑩ V2ray 香港
+      - 香港-PRO-IPLC-HK1-7-流量倍率:1.0
+      - 「Lv1」③ v2ray 北京BGP-中转-香港
+      - "[vip1]︱V2ray︱㉓日本 1000M｜×1x｜限速100M"
+      - "[vip1]︱V2ray︱①台湾 600M｜×1x｜限速100M"
+      - 香港-PRO-IPLC-HK2-8-流量倍率:1.0
+      - ︱V2ray︱⑰[vip2]中转｜广移｜新加坡｜×3x---200M
+      - 「Lv1」⑦ v2ray 新加坡
+      - "[vip1]︱V2ray︱⑫新加坡 1000M｜×1x｜限速100M"
+      - 香港-PRO-IPLC-HK2-6-流量倍率:1.0
+      - "[vip1]︱V2ray︱③日本 1000M｜×1x｜限速100M"
+      - 香港-PRO-HK1-8-流量倍率:0.5
+      - 「Lv1」⑬ V2ray 新加坡
+  - name: ♻️ 自动选择
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - 「Lv1」⑪ V2ray 日本
+      - 「Lv1」⑩ V2ray 香港
+      - 香港-PRO-IPLC-HK1-7-流量倍率:1.0
+      - 「Lv1」③ v2ray 北京BGP-中转-香港
+      - "[vip1]︱V2ray︱㉓日本 1000M｜×1x｜限速100M"
+      - "[vip1]︱V2ray︱①台湾 600M｜×1x｜限速100M"
+      - 香港-PRO-IPLC-HK2-8-流量倍率:1.0
+      - ︱V2ray︱⑰[vip2]中转｜广移｜新加坡｜×3x---200M
+      - 「Lv1」⑦ v2ray 新加坡
+      - "[vip1]︱V2ray︱⑫新加坡 1000M｜×1x｜限速100M"
+      - 香港-PRO-IPLC-HK2-6-流量倍率:1.0
+      - "[vip1]︱V2ray︱③日本 1000M｜×1x｜限速100M"
+      - 香港-PRO-HK1-8-流量倍率:0.5
+      - 「Lv1」⑬ V2ray 新加坡
+  - name: 🎥 NETFLIX
+    type: select
+    proxies:
+      - 🔰 节点选择
+      - ♻️ 自动选择
+      - 🎯 全球直连
+      - 「Lv1」⑪ V2ray 日本
+      - 「Lv1」⑩ V2ray 香港
+      - 香港-PRO-IPLC-HK1-7-流量倍率:1.0
+      - 「Lv1」③ v2ray 北京BGP-中转-香港
+      - "[vip1]︱V2ray︱㉓日本 1000M｜×1x｜限速100M"
+      - "[vip1]︱V2ray︱①台湾 600M｜×1x｜限速100M"
+      - 香港-PRO-IPLC-HK2-8-流量倍率:1.0
+      - ︱V2ray︱⑰[vip2]中转｜广移｜新加坡｜×3x---200M
+      - 「Lv1」⑦ v2ray 新加坡
+      - "[vip1]︱V2ray︱⑫新加坡 1000M｜×1x｜限速100M"
+      - 香港-PRO-IPLC-HK2-6-流量倍率:1.0
+      - "[vip1]︱V2ray︱③日本 1000M｜×1x｜限速100M"
+      - 香港-PRO-HK1-8-流量倍率:0.5
+      - 「Lv1」⑬ V2ray 新加坡
+  - name: ⛔️ 广告拦截
+    type: select
+    proxies:
+      - 🛑 全球拦截
+      - 🎯 全球直连
+      - 🔰 节点选择
+  - name: 🚫 运营劫持
+    type: select
+    proxies:
+      - 🛑 全球拦截
+      - 🎯 全球直连
+      - 🔰 节点选择
+  - name: 🌍 国外媒体
+    type: select
+    proxies:
+      - 🔰 节点选择
+      - ♻️ 自动选择
+      - 🎯 全球直连
+      - 「Lv1」⑪ V2ray 日本
+      - 「Lv1」⑩ V2ray 香港
+      - 香港-PRO-IPLC-HK1-7-流量倍率:1.0
+      - 「Lv1」③ v2ray 北京BGP-中转-香港
+      - "[vip1]︱V2ray︱㉓日本 1000M｜×1x｜限速100M"
+      - "[vip1]︱V2ray︱①台湾 600M｜×1x｜限速100M"
+      - 香港-PRO-IPLC-HK2-8-流量倍率:1.0
+      - ︱V2ray︱⑰[vip2]中转｜广移｜新加坡｜×3x---200M
+      - 「Lv1」⑦ v2ray 新加坡
+      - "[vip1]︱V2ray︱⑫新加坡 1000M｜×1x｜限速100M"
+      - 香港-PRO-IPLC-HK2-6-流量倍率:1.0
+      - "[vip1]︱V2ray︱③日本 1000M｜×1x｜限速100M"
+      - 香港-PRO-HK1-8-流量倍率:0.5
+      - 「Lv1」⑬ V2ray 新加坡
+  - name: 🌏 国内媒体
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 「Lv1」⑩ V2ray 香港
+      - 香港-PRO-IPLC-HK1-7-流量倍率:1.0
+      - 「Lv1」③ v2ray 北京BGP-中转-香港
+      - "[vip1]︱V2ray︱①台湾 600M｜×1x｜限速100M"
+      - 香港-PRO-IPLC-HK2-8-流量倍率:1.0
+      - 香港-PRO-IPLC-HK2-6-流量倍率:1.0
+      - 香港-PRO-HK1-8-流量倍率:0.5
+      - 🔰 节点选择
+  - name: Ⓜ️ 微软服务
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🔰 节点选择
+      - 「Lv1」⑪ V2ray 日本
+      - 「Lv1」⑩ V2ray 香港
+      - 香港-PRO-IPLC-HK1-7-流量倍率:1.0
+      - 「Lv1」③ v2ray 北京BGP-中转-香港
+      - "[vip1]︱V2ray︱㉓日本 1000M｜×1x｜限速100M"
+      - "[vip1]︱V2ray︱①台湾 600M｜×1x｜限速100M"
+      - 香港-PRO-IPLC-HK2-8-流量倍率:1.0
+      - ︱V2ray︱⑰[vip2]中转｜广移｜新加坡｜×3x---200M
+      - 「Lv1」⑦ v2ray 新加坡
+      - "[vip1]︱V2ray︱⑫新加坡 1000M｜×1x｜限速100M"
+      - 香港-PRO-IPLC-HK2-6-流量倍率:1.0
+      - "[vip1]︱V2ray︱③日本 1000M｜×1x｜限速100M"
+      - 香港-PRO-HK1-8-流量倍率:0.5
+      - 「Lv1」⑬ V2ray 新加坡
+  - name: 📲 电报信息
+    type: select
+    proxies:
+      - 🔰 节点选择
+      - 🎯 全球直连
+      - 「Lv1」⑪ V2ray 日本
+      - 「Lv1」⑩ V2ray 香港
+      - 香港-PRO-IPLC-HK1-7-流量倍率:1.0
+      - 「Lv1」③ v2ray 北京BGP-中转-香港
+      - "[vip1]︱V2ray︱㉓日本 1000M｜×1x｜限速100M"
+      - "[vip1]︱V2ray︱①台湾 600M｜×1x｜限速100M"
+      - 香港-PRO-IPLC-HK2-8-流量倍率:1.0
+      - ︱V2ray︱⑰[vip2]中转｜广移｜新加坡｜×3x---200M
+      - 「Lv1」⑦ v2ray 新加坡
+      - "[vip1]︱V2ray︱⑫新加坡 1000M｜×1x｜限速100M"
+      - 香港-PRO-IPLC-HK2-6-流量倍率:1.0
+      - "[vip1]︱V2ray︱③日本 1000M｜×1x｜限速100M"
+      - 香港-PRO-HK1-8-流量倍率:0.5
+      - 「Lv1」⑬ V2ray 新加坡
+  - name: 🍎 苹果服务
+    type: select
+    proxies:
+      - 🔰 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - 「Lv1」⑪ V2ray 日本
+      - 「Lv1」⑩ V2ray 香港
+      - 香港-PRO-IPLC-HK1-7-流量倍率:1.0
+      - 「Lv1」③ v2ray 北京BGP-中转-香港
+      - "[vip1]︱V2ray︱㉓日本 1000M｜×1x｜限速100M"
+      - "[vip1]︱V2ray︱①台湾 600M｜×1x｜限速100M"
+      - 香港-PRO-IPLC-HK2-8-流量倍率:1.0
+      - ︱V2ray︱⑰[vip2]中转｜广移｜新加坡｜×3x---200M
+      - 「Lv1」⑦ v2ray 新加坡
+      - "[vip1]︱V2ray︱⑫新加坡 1000M｜×1x｜限速100M"
+      - 香港-PRO-IPLC-HK2-6-流量倍率:1.0
+      - "[vip1]︱V2ray︱③日本 1000M｜×1x｜限速100M"
+      - 香港-PRO-HK1-8-流量倍率:0.5
+      - 「Lv1」⑬ V2ray 新加坡
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+  - name: 🛑 全球拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🔰 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - 「Lv1」⑪ V2ray 日本
+      - 「Lv1」⑩ V2ray 香港
+      - 香港-PRO-IPLC-HK1-7-流量倍率:1.0
+      - 「Lv1」③ v2ray 北京BGP-中转-香港
+      - "[vip1]︱V2ray︱㉓日本 1000M｜×1x｜限速100M"
+      - "[vip1]︱V2ray︱①台湾 600M｜×1x｜限速100M"
+      - 香港-PRO-IPLC-HK2-8-流量倍率:1.0
+      - ︱V2ray︱⑰[vip2]中转｜广移｜新加坡｜×3x---200M
+      - 「Lv1」⑦ v2ray 新加坡
+      - "[vip1]︱V2ray︱⑫新加坡 1000M｜×1x｜限速100M"
+      - 香港-PRO-IPLC-HK2-6-流量倍率:1.0
+      - "[vip1]︱V2ray︱③日本 1000M｜×1x｜限速100M"
+      - 香港-PRO-HK1-8-流量倍率:0.5
+      - 「Lv1」⑬ V2ray 新加坡
+rules:
+ - GEOIP,CN,🎯 全球直连
+ - MATCH,🐟 漏网之鱼
